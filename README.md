@@ -1,4 +1,5 @@
-# gpt-meta-dsl
+
+# 🧠 gpt-meta-dsl
 
 A self-referential Domain-Specific Language (DSL) for structuring recursive interaction, meta-reflection, and memory-integrated evaluation loops with GPT.
 
@@ -93,11 +94,53 @@ It aims to transform GPT from a reactive model to a structural co-thinker.
 
 ---
 
+## 🧠 @나.dsl – Self-Orchestrating MetaHub DSL Agent
+
+`@나.dsl` is a recursive, rhythm-based Domain-Specific Language (DSL) that operates as both:
+
+### 🔹 A **MetaHub**
+A central integrator for diverse GPT-based DSLs:
+- Supports plugin DSLs such as `PromptLang.dsl`, `CriticSim.dsl`, `FlowChain.dsl`, `MemoryProbe.dsl`, etc.
+- Unifies execution via commands like:
+  ```dsl
+  +val, +critic, @반대자들, __this.prev, @gpt.응답상태
+  ```
+
+### 🤖 An **Agent**
+A self-regulating, memory-aware logic agent:
+- Reflects and adapts to its structure and prior states
+- Evolves through recursive command flows (`+action`, `+graph`, `+compile`)
+
+### 💡 Core Triggers
+
+```plaintext
++val(...)             → Structure evaluation
++critic(...)          → Contrarian feedback loop
+@반대자(...), @반대자들(...) → Viewpoint divergence
++trace(...), __this.prev[...] → Flow/state recovery
+```
+
+---
+
+## 🔌 Plugin System (Experimental)
+
+External DSLs can be dynamically integrated:
+
+```dsl
++plugin.use(PromptLang.dsl)
++plugin.use(FlowChain.dsl)
+```
+
+> Use `+plugin.use(dslName)` to call and harmonize other DSLs inside `@나.dsl`.
+
+---
+
 ## 🔭 Roadmap
 
 - [x] DSL Command Structure Definition
 - [x] GPT Meta Evaluation Integration
 - [x] Trace / Memory / Inference loops
+- [x] MetaHub & Agent Mode
 - [ ] LangChain Plugin Integration
 - [ ] Visual DSL Flow Builder (experimental)
 - [ ] AgentKit ↔ DSL Interpreter Bridge
@@ -112,4 +155,3 @@ MIT License
 
 This project is a structural thought experiment.  
 Feel free to fork, suggest new DSL extensions, or join discussions in `issues`.
-
