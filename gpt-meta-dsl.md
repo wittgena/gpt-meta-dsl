@@ -1,12 +1,16 @@
 # gpt-meta-dsl
+> 🌐 **Homepage**: [https://wittgena.github.io](https://wittgena.github.io)
 
-A self-referential Domain-Specific Language (DSL) for structuring recursive interaction, meta-reflection, and memory-integrated evaluation loops with GPT.
+### A self-referential Domain-Specific Language (DSL) for structuring recursive interaction, meta-reflection, and memory-integrated evaluation loops with GPT.
 
 ---
 
 ## 🧠 Concept
 
-`gpt-meta-dsl` enables users to:
+`gpt-meta-dsl` is a domain-specific language originally developed with the Korean language in mind, making it highly intuitive for Korean speakers.  
+However, its modular, symbolic, and reflective structure allows seamless adaptation to English-based contexts as well.
+
+It enables users to:
 - Reflectively evaluate their own queries and state
 - Trigger structured responses from GPT using symbolic DSL commands
 - Trace memory, inference paths, and generate structural feedback loops
