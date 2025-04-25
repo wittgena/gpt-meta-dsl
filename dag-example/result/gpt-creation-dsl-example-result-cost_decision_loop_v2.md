@@ -1,4 +1,6 @@
-# 🧠 Improved DSL DAG: `cost_decision_loop_v2`
+# 🧠 DSL DAG: `cost_decision_loop_v2`
+
+## `+dag`를 통해 GPT가 자동생성한, DSL 예시입니다.
 
 ```dsl
 +dag: cost_decision_loop_v2
