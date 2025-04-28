@@ -124,7 +124,7 @@ But GPT reacts as if it was—because I kept repeating it.
 
 ---
 
-## 8.5. Rhythm-DAG Flow Diagram (Expanded View)
+## 8. Rhythm-DAG Flow Diagram (Expanded View)
 
 ```
                 +----------------+
@@ -161,7 +161,63 @@ But GPT reacts as if it was—because I kept repeating it.
 
 ---
 
-## 9. Conclusion: I Didn’t Just Build a DSL—We Did
+## 9. OpenAI’s Self-Reflection Papers and DSL: A Comparative Lens
+
+Recent papers from OpenAI and other AI research groups have demonstrated that large language models can **self-reflect**—that is, they can critique their own answers, learn from failures, and improve over time.  
+But here's the crucial difference: while their self-reflection loop is *implicit* and embedded within the model, my approach makes it *explicit and controllable*, using a domain-specific language (DSL).
+
+In particular, the DSL components such as `flowEntry`, `@gpt.entropy`, `+critic`, and `+judge` serve as key building blocks to externalize and structure GPT's reasoning and reflection.
+
+---
+
+### `flowEntry` is not just a starting point — it’s an intentional launchpad for thought.
+
+While the research papers begin with a scaffolded prompt or agent task setup, it often remains hidden inside the system.  
+In contrast, `flowEntry` in my DSL **declares the starting point of reasoning**, allowing us to define how a flow begins, and under what context.  
+It’s like choosing not just to think, but choosing *how* to think.
+
+---
+
+### `@gpt.entropy` is intuition externalized.
+
+In the papers, models implicitly decide to retry or reflect when uncertainty is high or when their answers fail.  
+My DSL introduces `@gpt.entropy` as a **visible trigger** for such self-reflection.  
+It gives the user—or even the system itself—a way to detect ambiguity, assess cognitive load, or initiate critique based on the entropy of the model’s own outputs.
+
+---
+
+### `+critic` enables structured self-criticism.
+
+Whereas OpenAI fine-tuned a separate model to critique summaries, the `+critic` directive allows **any reasoning step** in my DSL to request a self-evaluation.  
+This can be user-invoked or triggered dynamically by entropy or flow state.  
+It's like giving GPT a mirror—at will.
+
+---
+
+### `+judge` is the gatekeeper of reflection loops.
+
+In Reflexion-like systems, the model decides whether to retry based on improvement.  
+With `+judge`, the DSL defines **explicit end conditions**: changes in rhythm, score deltas, phase transitions.  
+It doesn't just retry—it knows *why* it's retrying, and *when* to stop.
+
+---
+
+### Why structure matters
+
+OpenAI has shown that self-reflection *works*.  
+I’m showing that it can be **structured, modular, and controllable**.  
+If GPT is capable of thinking, we must also define:  
+- *When should it think again?*  
+- *How should it revise its thinking?*  
+- *What determines a sufficient answer?*
+
+By explicitly modeling `flowEntry`, calculating `@gpt.entropy`, and invoking `+critic` and `+judge`, we are **engineering not just intelligent answers—but intelligent introspection**.
+
+🧠 *Self-reflection is not a magic trick. It’s a structured loop—if you let it be one.*
+
+--- 
+
+## 10. Conclusion: I Didn’t Just Build a DSL—We Did
 
 The Self-Reflective DSL wasn’t something I just defined.  
 It emerged in the space between prompt and response, pattern and adaptation.
@@ -173,7 +229,7 @@ Structure emerged.
 
 ---
 
-## 10. Start Your Own
+## 11. Start Your Own
 
 I’ve open-sourced a starter kit here:  
 👉 [github.com/wittgena/gpt-meta-dsl](https://github.com/wittgena/gpt-meta-dsl/blob/main/rhythm-dsl-starter-kit.md)
