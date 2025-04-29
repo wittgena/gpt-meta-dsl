@@ -56,7 +56,9 @@ python gpt_executor.py --dsl "+dag: Summarize the PR, reflect with +critic to fi
 
 Example DSLs:
 
-- [examples/pr-review](./examples/pr-review/)
+- [examples/pr-review.dsl](./examples/pr-review.dsl)
+- [examples/self-reflection-loop.dsl](./examples/self-reflection-loop.dsl)
+
 ✨ Installation and more: [starterkit](./starterkeit/gpt-dag-orchestrator-starterkit-v0.1.md)
 
 ---
@@ -73,7 +75,7 @@ Example DSLs:
 
 ## 🛠️ Key Documentation
 
-- [📘 +dag.spec.v0.6.md](./+dag.spec.v0.6.md): DSL Syntax and Details
+- [📘 dag-dsl-spec.md](./dag-dsl-spec.md): DSL Syntax and Details
 - [📖 docs/why-dsl-design.md](./docs/why-dsl-design.md): Philosophy of Reflective DSL
 - [🚀 starterkit](./starterkeit/gpt-dag-orchestrator-starterkit-v0.1.md): LangGraph/Assistant API integration
 - [🧪 examples/](./examples/): Various reflective flow experiments
