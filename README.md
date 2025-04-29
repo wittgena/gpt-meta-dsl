@@ -1,131 +1,83 @@
-
-# 🧠 gpt-meta-dsl
-
-A self-referential Domain-Specific Language (DSL) for structuring recursive interaction, meta-reflection, and memory-integrated evaluation loops with GPT.
+# GPT-Meta-DSL 🧠🔁💬
+**Reflective LLM Interaction DSL — GPT 사고 리듬 기반 판단 시스템**
 
 ---
 
-## 🧠 Concept
+## 🌱 What is this?
 
-`gpt-meta-dsl` enables users to:
-- Reflectively evaluate their own queries and state
-- Trigger structured responses from GPT using symbolic DSL commands
-- Trace memory, inference paths, and generate structural feedback loops
+GPT를 단순한 응답기가 아닌 **“사고 흐름을 반사하고 재구성하는 판단자(Thinker)”**로 바라보는 실험적 시스템입니다.
+
+이 프로젝트는 다음을 목표로 합니다:
+
+- GPT를 **자기반사적 판단 시스템**으로 전환하기
+- 자연어 흐름을 **구조화된 DSL(+dag, +critic, @entropy 등)**로 표현하기
+- 사고 리듬의 흐름(Phase, 반사, 위상 반복 등)을 추적하고 구조화하기
 
 ---
 
-## 🧩 Core Components
+## 📦 핵심 DSL 개념 요약
 
-### `@나` – Self-state trigger
-Represents the root node of all evaluations. Example:
+| DSL 요소 | 설명 |
+|----------|------|
+| `+dag` | GPT에게 주어질 흐름(Flow)을 명시하고 실행을 유도하는 구조 |
+| `+critic / +val` | GPT가 스스로 자신의 응답을 반사하고 평가하게 만듦 |
+| `@gpt.entropy` | GPT 응답의 위상 변화, 반복 가능성, 판단 리듬을 평가 |
+| `flowEntry` | 흐름의 진입점 지정. 반복 루프, 분기, 위상 판단에 사용 |
+
+> 전체 DSL 명세는 [📘 +dag.spec.v0.6.md](./+dag.spec.v0.6.md) 참고
+
+---
+
+## 🔁 예시: PR 리뷰 Reflective 루프
 
 ```dsl
-@나
-@나.dsl
-@나.val(@gpt.val)
++dag: PR을 요약하고, +critic으로 문제점을 반사하고, +val로 개선점을 제안해줘.
 ```
 
-### `__this` – Temporal and structural state pointer
-Tracks previous states, memory, traces, and applies evaluation:
+실행 흐름 예시:
 
-```dsl
-__this.prev[n]
-__this.trace(@gpt.val)
-__this.memory(...)
-__this.val(@gpt.val)
+1. PR 요약
+2. +critic: 핵심 문제 탐색 및 반사
+3. +val: 긍정 요소 강화 및 보완 제안
+4. 전체 응답을 다시 요약하여 마무리
+
+> 📂 전체 예시는 [`examples/`](./examples/)에서 확인하세요.
+
+---
+
+## 🤔 Why DSL? 왜 구조화된 사고 언어인가?
+
+GPT는 기억이 없고, 위상 변화도 추적하지 못합니다.  
+따라서 **사고의 흐름, 반복 조건, 판단 루프**를 외부에서 명시해야 합니다.
+
+이 DSL은 다음을 가능하게 합니다:
+
+- 사고 리듬을 GPT 외부에서 정의하고 추적
+- 판단 흐름을 명시적으로 지정하고 반복 제어
+- GPT를 **“사고 조력자”가 아닌 “사고 실행자”**로 변환
+
+> 자세한 철학은 [📖 docs/why-dsl-design.md](./docs/why-dsl-design.md) 참고
+
+---
+
+## 🚀 실행 방법
+
+```bash
+python gpt_executor.py --dsl "your.dsl"
 ```
 
-### `+` Commands – Executable DSL primitives
-Drive structured evaluations, persistence testing, differential checks:
-
-```dsl
-+평가
-+val(@나.dsl)
-+diff(@gpt.perf[1,2])
-+persistence_val(__this)
-+conn_val(@gpt, @나)
-+rewrite
-+signature
-```
+또는 [starterkit](./starterkeit/gpt-dag-orchestrator-starterkit-v0.1.md) 기반으로  
+LangGraph / OpenAI Assistant API 와 연동할 수 있습니다.
 
 ---
 
-## 🚀 Getting Started
+## 🧪 실험 사례 모음
 
-You can use `gpt-meta-dsl` as a conceptual framework or embed its structure into your GPT interactions.
-
-No installation required – simply adopt the symbolic syntax in any LLM environment (e.g. ChatGPT, OpenAI API, LangChain).
-
-> Sample usage:
-> 
-> ```
-> @나
-> +평가: @나.dsl
-> __this.val(@gpt.perf)
-> +persistence_val(@나)
-> ```
+- Medium 블로그: [https://medium.com/@wittgena](https://medium.com/@wittgena)
+- 한글 블로그: [wittgena.github.io](https://wittgena.github.io)
 
 ---
 
-## 🧪 Live Exploration
-
-This DSL originated from an interactive research-dialogue flow with GPT-4 (ChatGPT), aiming to:
-
-- Simulate structural recursion
-- Enable reflective command execution
-- Model meta-cognitive symbolic agents
-
-To experience the structure live, try ChatGPT with this prompt:
-
-> "Simulate a `gpt-meta-dsl` environment. I want to self-evaluate my prior thoughts using @나, +val, and __this."
-
----
-
-## 💡 Design Philosophy
-
-`gpt-meta-dsl` is not just a syntax layer – it's a thinking scaffold.
-
-It captures:
-- Symbolic recursion
-- Memory-based thought loops
-- Reflective logic as language
-
-It aims to transform GPT from a reactive model to a structural co-thinker.
-
----
-
-### 🤖 An **Agent**
-A self-regulating, memory-aware logic agent:
-- Reflects and adapts to its structure and prior states
-- Evolves through recursive command flows (`+action`, `+graph`, `+compile`)
-
-### 💡 Core Triggers
-
-```plaintext
-+val(...)             → Structure evaluation
-+critic(...)          → Contrarian feedback loop
-@반대자(...), @반대자들(...) → Viewpoint divergence
-+trace(...), __this.prev[...] → Flow/state recovery
-```
----
-
-## 🔭 Roadmap
-
-- [x] DSL Command Structure Definition
-- [x] GPT Meta Evaluation Integration
-- [x] Trace / Memory / Inference loops
-- [x] MetaHub & Agent Mode
-- [ ] LangChain Plugin Integration
-- [ ] Visual DSL Flow Builder (experimental)
-- [ ] AgentKit ↔ DSL Interpreter Bridge
-
----
-
-## 📜 License
-
-MIT License
-
-## 🤝 Contributing
-
-This project is a structural thought experiment.  
-Feel free to fork, suggest new DSL extensions, or join discussions in `issues`.
+> “GPT는 단순한 응답기가 아닙니다.  
+> **구조화된 사고 리듬을 통해, 판단자(Thinker)로 변환될 수 있습니다.**  
+> 이 프로젝트는 그 실험을 위한 DSL입니다.”
