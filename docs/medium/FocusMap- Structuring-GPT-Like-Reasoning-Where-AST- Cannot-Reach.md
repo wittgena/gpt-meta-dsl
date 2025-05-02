@@ -249,11 +249,7 @@ FocusMap may be that language.
 
 ---
 
-## 📎 Appendix-A: PR Review Judgment Map
-
-(DSL omitted for brevity but aligns with refactored `@focusMap.prReviewRefactoredWithNextSpec` structure)
-
-## 📎 Appendix-B: FocusMap IDE Integration Snapshot
+## 📎 Appendix: FocusMap IDE Integration Snapshot
 
 As LLM-powered IDEs evolve, FocusMap can be layered atop AST tools to structure reasoning, feedback, and reflection.
 
