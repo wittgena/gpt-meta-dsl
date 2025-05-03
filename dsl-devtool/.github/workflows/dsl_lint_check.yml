@@ -27,3 +27,10 @@ jobs:
           for f in $(find . -name "*.md"); do
             dsl-lint "$f"
           done
+
+      - name: Generate .dot from DSL
+        run: |
+          for f in $(find . -name "*.md"); do
+            echo "=== DOT Graph for $f ==="
+            dsl-dot "$f"
+          done
