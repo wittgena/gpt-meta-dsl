@@ -1,0 +1,31 @@
+{
+  "extends": "Mariana.sublime-color-scheme",
+  "rules": [
+    {
+      "scope": "support.function.phase.dsl",
+      "foreground": "#FFD580"
+    },
+    {
+      "scope": "support.function.rhythm.dsl",
+      "foreground": "#80FFD5"
+    },
+    {
+      "scope": "keyword.other.directive.dsl",
+      "foreground": "#80A0FF",
+      "font_style": "bold"
+    },
+    {
+      "scope": "string.unquoted.reason.dsl, string.unquoted.purpose.dsl, string.quoted.double.dsl",
+      "foreground": "#C8E1FF"
+    },
+    {
+      "scope": "comment.line.double-slash.dsl",
+      "foreground": "#999999",
+      "font_style": "italic"
+    },
+    {
+      "scope": "punctuation.section.block.begin.dsl, punctuation.section.block.end.dsl",
+      "foreground": "#FF8080"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+%YAML 1.2
+---
+name: Judgment DSL (Enhanced)
+file_extensions:
+  - dsl
+scope: source.dsl
+
+contexts:
+  main:
+    - match: '\+\s*(judge|critic|metaCritic|reflow|intuition|halt|resume|snapshot)\s*'
+      scope: support.function.phase.dsl
+    - match: '\+\s*(if|then|loop|else)\s*'
+      scope: keyword.control.conditional.dsl
+    - match: '\+\s*(resonanceMap|flowEntropy|phaseDiagnostics|seedRhythm)\s*'
+      scope: variable.parameter.rhythm.dsl
+    - match: '@\s*[a-zA-Z0-9_.]+(?=\s*\{)'
+      scope: entity.name.section.dsl
+    - match: '\+reason:\s*".*?"'
+      scope: string.unquoted.reason.dsl
+    - match: '"[^"]*"'
+      scope: string.quoted.double.dsl
+    - match: '(//|#).*$'
+      scope: comment.line.double-slash.dsl
+    - match: '\{|\}'
+      scope: punctuation.section.block.dsl
+    - match: '\\+\\s*(dag|action|save|enterPhase|lockPhase|metaCritic|reflow|halt|resume|snapshot)\\b'
+      scope: keyword.other.directive.dsl
+
+    - match: '\\+\\s*(resonanceMap|flowEntropy|traceLiveMonitor)\\b'
+      scope: support.function.rhythm.dsl
+
+    - match: '\\+purpose:\\s*".*?"'
+      scope: string.unquoted.purpose.dsl
