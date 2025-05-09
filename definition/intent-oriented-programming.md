@@ -1,10 +1,10 @@
-# Intention-Oriented Programming (의도 중심 프로그래밍)
+# Intent-Oriented Programming (의도 중심 프로그래밍)
 
 ---
 
 ## 📌 정의 (Definition)
 
-**의도 중심 프로그래밍 (Intention-Oriented Programming)**은  
+**의도 중심 프로그래밍 (Intent-Oriented Programming)**은  
 사용자가 “무엇을 하고 싶은가”와 “왜 그렇게 하고 싶은가”라는 **의도(intention)**를 자연어 또는 DSL로 표현하면,  
 이를 시스템이 구조화된 흐름으로 해석하고, 판단자(GPT 등)가 판단 흐름을 생성하며,  
 실행자(LLM AI등)가 작업을 수행하는 **목적 기반 자동화 프로그래밍 패러다임**이다.
@@ -53,6 +53,6 @@
 
 ## ✅ 요약 정의
 
-> **Intention-Oriented Programming**은  
+> **Intent-Oriented Programming**은  
 > 의도를 중심으로 흐름을 설계하고, LLM AI 판단자와 DSL(or 자연어) 실행자가 협력하는  
 > **“의사결정 기반 프로그래밍”의 실천적 구조화 방법론**이다.
