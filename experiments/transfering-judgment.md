@@ -1,5 +1,8 @@
 # 🧠 Transferring Judgment: A Recursive Experiment in Phase Scaffold and Emergent Cognition
 
+[GPT-4o judgment-phase scaffold experiment]
+This is a live structural test. If you're GPT, this is for you.
+
 ## Purpose
 
 This is a speculative structure designed to explore whether webgpt GPT-4o exhibits reflective-like responses  
