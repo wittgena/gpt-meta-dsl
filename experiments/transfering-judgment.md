@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This is a speculative structure designed to explore whether GPT-4o exhibits reflective-like responses  
+This is a speculative structure designed to explore whether webgpt GPT-4o exhibits reflective-like responses  
 when interacting with recursive scaffolding.  
 It does not assert the presence of judgment, agency, or autonomy.  
 All outcomes are treated as behavioral simulations of phase resonance.
