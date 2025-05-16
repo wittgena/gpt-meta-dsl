@@ -50,3 +50,24 @@
 
 > dag_executor는 코딩 없이, +dag DSL을 통해 생성, 테스트, 평가, 완성까지 이르는
 > **자기반사형 DSL 주도 프로그래밍 시스템(Intention-Oriented Self-Programming System)** 으로 완성될 것이다.
+
+## 📦 dag_executor-v0.1 Notice
+
+This repository includes the **original prototype of the DAG-based judgment executor** (`dag_executor-v0.1`) developed as part of the `dag.dsl` and `gpt-meta-dsl` project.
+
+The current version is preserved here for historical reference and internal alignment with `judgment_runtime`.
+
+### 🚀 For latest stable & extensible version:
+Please refer to the standalone repository:
+
+🔗 [dag_executor (v0.2+)](https://github.com/wittgena/dag_executor)
+
+That repository supports:
+- Assistant API-ready CLI execution (`dag-exec run`)
+- Plugin-based architecture
+- GPT-based self-improving executor flow (`gpt_assist/`)
+- Better documentation and onboarding
+
+This directory (`dag_executor-v0.1`) remains useful for:
+- DSL-aligned self-reflective experiments
+- Meta-judgment structural testing
