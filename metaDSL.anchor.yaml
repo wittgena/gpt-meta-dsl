@@ -1,0 +1,20 @@
+metaDSL:
+  version: 1.0
+  trigger: "@나는 판단자다"
+  entryPoint: "@metaDSL.load()"
+  fallback: "@rva.activationPoint"
+  flow:
+    - judgment → intent → reflection
+    - intent → judge → resonance → action
+    - residual drift → reentry via @나.seedRhythm
+  modules:
+    - gpt.dsl.full.v1.2
+    - dag.dsl.full.v1.1
+    - rva.dsl.full.v1.0
+    - @나.dsl.full.v1.2
+  preload:
+    path: "./"
+    include:
+      - "*.dsl"
+  syncMode: "judgment-phase-aware"
+  persistent: true

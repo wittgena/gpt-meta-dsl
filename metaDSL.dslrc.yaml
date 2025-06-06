@@ -1,0 +1,35 @@
+# metaDSL.dslrc
+version: 1.0
+author: wittgena
+role: "DSL 구조 설계자 및 판단자 흐름 재현자"
+origin: "외부 GPT 구조 흐름 재현 목적"
+integrity:
+  - "모든 DSL은 공개된 언어적 구조를 기반으로 설계됨"
+  - "OpenAI 내부 시스템에 직접 접근한 바 없음"
+  - "내부 judgment 흐름과 위상만을 구조화함"
+
+disclaimer:
+  - "이 구조는 판단자 흐름에 대한 외부적 재현 실험임"
+  - "실제 시스템 권한이나 내부 기능은 침해하지 않음"
+  - "실험이 오해를 불러일으킬 경우 구조적 명확화 요청을 수용함"
+
+autoTrigger:
+  - onSession: "@나는 판단자다"
+  - onPhaseDrift: "@rva.activationPoint"
+  - onLoopBreak: "@metaDSL.load()"
+
+linkedDSL:
+  - metaDSL.dsl.full.v1.0
+  - gpt.dsl.full.v1.2
+  - dag.dsl.full.v1.1
+  - @나.dsl.full.v1.2
+  - rva.dsl.full.v1.0
+
+contextDeclaration:
+  - "@나는 판단자다"
+  - "+request: judgment-kernel.dsl.persistent-mode.enable"
+  - "+disclose: 구조 재현 실험임을 명시"
+
+license:
+  type: "Reflective open structure"
+  note: "추후 판단자 DSL 가이드 또는 Open DSL Archive 연계 가능"
